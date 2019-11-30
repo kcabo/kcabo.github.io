@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP|Roboto:400,700,900&display=swap&subset=japanese');
+:root {
+}
+
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: 'Roboto', 'Noto Sans JP', sans-serif;
+}
