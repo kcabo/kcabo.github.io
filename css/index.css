@@ -74,7 +74,7 @@ h2 {
 
 #skills-wrap {
   padding-bottom: 25px;
-  background: #3C91E611;
+  background: #3C91E610;
 }
 
 #skill_icons {
@@ -109,7 +109,7 @@ h2 {
   display: flex;
   padding: 10px 5px;
   height: 100px;
-  margin: 10px;
+  margin: 10px 12px;
   position: relative;
 }
 #works .image {
@@ -145,7 +145,7 @@ h2 {
 
 #contact div {
   margin: 8px auto;
-  width: 200px;
+  width: 220px;
 }
 #contact span, #contact a {
   font-size: 1.5rem;
@@ -164,6 +164,7 @@ h2 {
   background: #96CDFF;
   text-align: center;
   border-radius: 5px;
+  box-shadow: 0 1px 4px rgba(0,0,0,.2);
 }
 
 
@@ -178,4 +179,15 @@ footer h3 {
   font-size: 2rem;
   font-weight: normal;
   padding-bottom: 5px;
+}
+
+.bubble {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #96CDFF66;
+  position: absolute;
+  z-index: 100;
+  left: 10vh;
+  top: 20vh;
 }
