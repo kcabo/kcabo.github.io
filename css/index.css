@@ -10,44 +10,72 @@ body {
   font-family: 'Roboto', 'Noto Sans JP', sans-serif;
   background: #F7F7FB;
   max-width: 600px;
+  margin: auto;
 }
 
-#header {
+header {
+  height: 180px;
   position: relative;
 }
-#header div img {
-  width: 100%;
-}
-#header .wrap {
+header #logo {
+  width: 40px;
+  display: block;
   position: absolute;
-  top: -2px;
-  right: 0;
-  height: 100%;
-  width: 65%;
-  background: #fffc;
-  padding-top: 70px;
+  top: 50px;
+  left: calc(50% - 15px);
+  transition: transform 400ms 0s ease, left 200ms 400ms ease-in-out;
 }
-#header .wrap p {
-  font-size: 5rem;
-  font-weight: lighter;
-  padding-left: 10px;
-  color: #444;
+
+header.init #logo {
+  left: calc(50% - 70px);
+  transform: rotateX(360deg);
+}
+
+header p {
+  font-size: 3rem;
+  font-weight: bold;
   letter-spacing: 1px;
-  /* text-shadow: 1px 1px 1px #888; */
+  color: #222e;
+  position: absolute;
+  top: 46px;
+  left: calc(50% - 20px);
+  opacity: 0;
+  transition: opacity 1000ms 600ms ease;
+}
+
+header.init p {
+  opacity: 1;
+  /* color: white; */
+}
+
+header #pool {
+  display: block;
+  width: 100%;
+  opacity: 0;
+  z-index: -10;
+  transition: opacity 1000ms 1000ms ease;
+}
+header.init #pool {
+  opacity: 1;
 }
 
 h2 {
   font-size: 3rem;
   font-weight: lighter;
   text-align: center;
-  margin-top: 40px;
-  margin-bottom: 5px;
+  padding-top: 20px;
+  padding-bottom: 5px;
   letter-spacing: 1px;
 }
 .card {
   background-color: #fff;
   border-radius: 2px;
   box-shadow: 0 2px 8px rgba(0,0,0,.15);
+}
+
+#skills-wrap {
+  padding-bottom: 25px;
+  background: #3C91E611;
 }
 
 #skill_icons {
