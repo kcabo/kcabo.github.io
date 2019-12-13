@@ -23,7 +23,7 @@ header #logo {
   position: absolute;
   top: 50px;
   left: calc(50% - 15px);
-  transition: transform 400ms 0s ease, left 200ms 400ms ease-in-out;
+  transition: transform 450ms 0s ease-out, left 250ms 450ms ease-in-out;
 }
 
 header.init #logo {
@@ -45,7 +45,6 @@ header p {
 
 header.init p {
   opacity: 1;
-  /* color: white; */
 }
 
 header #pool {
@@ -86,23 +85,23 @@ h2 {
 
 #skill_icons .circle {
   border-radius: 50%;
-  border: 1px #3C91E6 dashed;
-  width: 90px;
-  height: 90px;
-  padding-top: 12px;
-  margin: 7px;
-  background: #3C91E611;
+  box-shadow: 0 2px 8px rgba(0,0,0,.15);
+  width: 70px;
+  height: 70px;
+  padding-top: 9px;
+  margin: 5px;
+  background: #fffb;
 }
 #skill_icons img {
   display: block;
   margin: auto;
-  height: 45px;
+  height: 40px;
 }
 #skill_icons p {
   text-align: center;
-  font-size: 1.3rem;
-  color: #555;
-  padding-top: 5px;
+  font-size: 0.9rem;
+  color: #222;
+  padding-top: 3px;
 }
 
 
@@ -144,23 +143,27 @@ h2 {
   width: 100%;
 }
 
-#contact {
-  margin: 15px;
+#contact div {
+  margin: 8px auto;
+  width: 200px;
+}
+#contact span, #contact a {
   font-size: 1.5rem;
-  text-align: center;
+  display: inline-block;
+  width: 100px;
+  line-height: 1.7;
 }
-
-#contact p span {
-  color: #aaa;
-  padding: 2px 15px;
+#contact span {
+  color: #bbb;
+  text-align: right;
+  padding-right: 10px;
 }
-
-#contact p a {
-  padding: 2px 10px;
-  background: #3C91E6;
-  color: white;
-  border-radius: 4px;
+#contact a {
   text-decoration: none;
+  color: white;
+  background: #96CDFF;
+  text-align: center;
+  border-radius: 5px;
 }
 
 
