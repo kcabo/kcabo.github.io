@@ -9,7 +9,7 @@ html {
 body {
   font-family: 'Roboto', 'Noto Sans JP', sans-serif;
   background: #F7F7FB;
-  max-width: 600px;
+  max-width: 800px;
   margin: auto;
 }
 
@@ -74,7 +74,7 @@ h2 {
 
 #skills-wrap {
   padding-bottom: 25px;
-  background: #3C91E610;
+  background: #E8EBF0;
 }
 
 #skill_icons {
@@ -99,7 +99,7 @@ h2 {
 }
 #skill_icons p {
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #222;
   padding-top: 3px;
 }
@@ -171,7 +171,7 @@ h2 {
 
 footer {
   margin-top: 40px;
-  background: #eee;
+  background: #E8EBF0;
   padding: 30px;
   line-height: 1.5;
 }
