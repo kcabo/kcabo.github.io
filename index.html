@@ -20,45 +20,44 @@
  <!-- class="rellax" data-rellax-speed="5" -->
 
 <body>
-  <div id="header">
-    <div>
-      <img src="img/poolside.png">
-    </div>
-    <div class="wrap">
-      <p>Reo</p>
-      <p>Kanzaki</p>
-    </div>
-  </div>
 
-  <h2>Skills</h2>
-  <div id="skill_icons">
-    <div class="circle">
-      <img src="img/python.svg">
-      <p>Python</p>
-    </div>
-    <div class="circle">
-      <img src="img/excel_icon.png">
-      <p>VBA</p>
-    </div>
-    <div class="circle">
-      <img src="img/html-5.svg">
-      <p>HTML</p>
-    </div>
-    <div class="circle">
-      <img src="img/css-3.svg">
-      <p>CSS</p>
-    </div>
-    <div class="circle">
-      <img src="img/javascript.svg">
-      <p>JavaScript</p>
-    </div>
-    <div class="circle">
-      <img src="img/postgresql.svg">
-      <p>SQL</p>
-    </div>
-    <div class="circle">
-      <img src="img/c-plusplus.svg">
-      <p>C++</p>
+  <header>
+    <img src="img/logo.svg" id="logo">
+    <p>Reo<br>Kanzaki</p>
+    <!-- <img src="img/poolside.png" id="pool"> -->
+  </header>
+
+  <div id="skills-wrap">
+    <h2>Skills</h2>
+    <div id="skill_icons">
+      <div class="circle">
+        <img src="img/python.svg">
+        <p>Python</p>
+      </div>
+      <div class="circle">
+        <img src="img/excel_icon.png">
+        <p>VBA</p>
+      </div>
+      <div class="circle">
+        <img src="img/html-5.svg">
+        <p>HTML</p>
+      </div>
+      <div class="circle">
+        <img src="img/css-3.svg">
+        <p>CSS</p>
+      </div>
+      <div class="circle">
+        <img src="img/javascript.svg">
+        <p>JavaScript</p>
+      </div>
+      <div class="circle">
+        <img src="img/postgresql.svg">
+        <p>SQL</p>
+      </div>
+      <div class="circle">
+        <img src="img/c-plusplus.svg">
+        <p>C++</p>
+      </div>
     </div>
   </div>
 
@@ -103,6 +102,12 @@
 
 <script src="js/rellax.min.js"></script>
 <script>var rellax = new Rellax(' .rellax ');</script>
+<script>
+  element = document.getElementsByTagName('header')[0];
+  window.onload = function(){
+    element.classList.add('init');
+  };
+</script>
 </body>
 
 </html>
