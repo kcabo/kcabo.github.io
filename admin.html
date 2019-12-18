@@ -55,8 +55,7 @@
     <div class="left">
       <p class="danger">火</p>
     </div>
-    <div class="center">
-      <div class="update">UPDATE</div>
+    <div class="column">
       <div class="sub">
         <div class="small">
           <p>空</p>
@@ -66,24 +65,21 @@
         </div>
       </div>
     </div>
-    <ul class="list">
-      <li>Thread</li>
-      <li>Thread</li>
-    </ul>
   </div>
 
   <div id="command">
-    <div class="hex">
+    <div class="hex" onclick="go('meets')">
       <img src="static/img/hex.svg">
       <p>MEETS</p>
     </div>
-    <div class="hex">
+    <div class="hex" onclick="go('records')">
       <img src="static/img/hex.svg">
       <p>RECORDS</p>
     </div>
     <div class="hex">
       <img src="static/img/hex.svg">
       <p>STATS</p>
+      <a href="stats"></a>
     </div>
     <div class="hex">
       <img src="static/img/hex.svg">
@@ -98,8 +94,23 @@
   </div>
 
   <div id="form">
-    <form method="get" action="./task">
-      <input name="name" type="text" placeholder="選手を検索">
+    <form method="get" action="" name="args">
+      <div class="row">
+        <p>range</p>
+        <input name="range" type="text">
+      </div>
+      <div class="row">
+        <p>from</p>
+        <input name="from" type="text">
+      </div>
+      <div class="row">
+        <p>to</p>
+        <input name="to" type="text">
+      </div>
+      <div class="row">
+        <p>year</p>
+        <input name="year" type="text">
+      </div>
     </form>
   </div>
 
@@ -108,24 +119,14 @@
   </footer>
 
   <script>
-  {% autoescape false %}
-    function jump_page(page) {
-      var flag = false;
-      var url = "?{{group}}&{{current_event}}&page=" + page;
-      for (var i = 0; i < 19; i++){
-        if(document.gradeFilter.grade[i].checked) {
-          flag = true;
-          break;
-        };
-      };
-      if(flag) {
-        document.gradeFilter.action = url;
-        document.gradeFilter.submit();
-      } else {
-        location.href = url;
-      };
+  // {% autoescape false %}
+    function go(target) {
+      var path = location.pathname;
+      var url = path + "/" + target;
+      document.args.action = url;
+      document.args.submit();
     };
-  {% endautoescape %}
+  // {% endautoescape %}
   </script>
 </body>
 

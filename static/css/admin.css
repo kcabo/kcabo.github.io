@@ -28,7 +28,7 @@ header .caution {
   padding: 8px;
   width: 80%;
   margin: auto;
-  opacity: 0.5;
+  animation: flash 5s ease-in-out infinite;
 }
 header .caution p {
   color: #fffd;
@@ -67,15 +67,17 @@ header > p {
 }
 
 #pane {
-  margin: 30px;
+  margin: 30px auto;
   border: solid .4px #fff9;
   display: flex;
+  max-width: 400px;
 }
 #pane .buttons div {
   padding: 4px 5px;
   background: #50943f;
   border: solid .1px #fff9;
   color: #fff5;
+  height: 50%;
 }
 #pane .buttons div p {
   background: #28481f;
@@ -114,29 +116,39 @@ header > p {
   color: #f6560a;
   font-family: 'Roboto';
   letter-spacing: -1px;
-  text-shadow: 0px 0px 4px #f6560a;
-
+  text-shadow: 0px 0px 8px #f6560a;
 }
 #denied p:first-child {
   border: solid 1px #f6560a;
   border-radius: 4px;
   width: 250px;
   margin: auto;
+  animation: flash 0.3s linear infinite;
 }
 #denied p:last-child {
   font-size: 2rem;
 }
+@keyframes flash {
+  0%,100% {
+    opacity: 1;
+  }
 
+  50% {
+    opacity: 0;
+  }
+}
 
 #safe {
   background: #cc4224;
   display: flex;
-  margin: 30px;
-  padding: 8px 0px 8px 20px;
+  margin: 30px auto;
+  padding: 10px 0;
   border-radius: 3px;
+  justify-content: center;
+  width: 250px;
 }
 
-#safe .left, #safe .sub .small {
+#safe .left, #safe .small {
   border: solid black 2px;
   border-radius: 3px;
   overflow: hidden;
@@ -157,23 +169,10 @@ header > p {
   background: var(--red);
   color: #f4e1d3;
 }
-#safe .center {
+#safe .column {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-}
-#safe .update {
-  font-size: 1.5rem;
-  font-family: 'Roboto';
-  border: solid 1px #eab722;
-  border-radius: 3px;
-  color: #eab722;
-  width: 70px;
-  margin: auto;
-  line-height: 1;
-  padding: 2px 0;
-  text-shadow: 0px 0px 1px rgba(246,198,158,1);
-  cursor: pointer;
+  justify-content: flex-end;
 }
 
 #safe .sub {
@@ -200,18 +199,11 @@ header > p {
   box-shadow: 0px 7px 5px -5px rgba(0,0,0,0.5) inset, 0px -7px 5px -5px rgba(0,0,0,0.5) inset;
 }
 
-#safe .list {
-  color: #eab722;
-  font-size: 1.4rem;
-  font-family: 'Roboto';
-  margin: 10px 40px;
-  list-style-type: decimal;
-}
 
 #command {
   display: flex;
   justify-content: center;
-  margin: 30px;
+  margin: 0 30px;
   flex-wrap: wrap;
 }
 
@@ -246,3 +238,65 @@ header > p {
   width: 100%;
   height: 100%;
 }
+
+#form {
+  margin: 20px auto;
+  width: 400px;
+}
+#form .row {
+  display: flex;
+  justify-content: center;
+}
+#form form {
+  display: block;
+  font-family: 'Roboto';
+  font-size: 2rem;
+  color: white;
+  line-height: 1.5;
+}
+#form p {
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  width: 70px;
+  color: #fdc630;
+  border-left: solid 1px #fdc630;
+  border-right: solid 1px #fdc630;
+  text-shadow: 0px 0px 6px #fdc630;
+}
+#form .row {
+  margin-bottom: 8px;
+  position: relative;
+}
+
+#form input {
+  border: solid .8px #fdc63066;
+  box-sizing: content-box;
+  padding-left: 6px;
+  margin-left: 10px;
+  outline: none;
+  background: #fdc63033;
+  color: #fdc630;
+
+}
+#form p::before {
+  display: block;
+  width: 1px;
+  height: 100%;
+  background: red;
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 120px;
+  animation: slide 4s ease-in-out infinite;
+}
+@keyframes slide {
+  0%,100% {
+    left: 120px;
+  }
+
+  50% {
+    left: 350px;
+  }
+}
+
+#safe, #pane {display: none;}
