@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="email=no,telephone=no,address=no" />
+  <title>Admin | Swimmers Zero</title>
+  <meta name="description" content="日本全国の競泳レースを毎日自動解析。ランキングや選手個人の分析結果をご覧いただけます。">
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="icon" type="image/png" href="static/img/icon-192x192.png">
+  <link rel="apple-touch-icon" type="image/png" href="static/img/apple-touch-icon-180x180.png">
+  <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+  <link rel="stylesheet" href="static/css/admin.css">
+  <script src="https://kit.fontawesome.com/fd65322e4b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <header>
+    <div class="caution">
+      <p>Authorized Personnel Only</p>
+    </div>
+    <div class="caption">
+      <div class="rect"></div>
+      <div class="char">
+        <p>管理者用系統制御画面</p>
+        <p>Swimmers Zero System Control</p>
+      </div>
+      <div class="rect"></div>
+    </div>
+  </header>
+
+  <div id="pane">
+    <div class="buttons">
+      <div class="active">
+        <p>開始</p>
+      </div>
+      <div class="">
+        <p>完了</p>
+      </div>
+    </div>
+    <div class="func">
+      <p>OBJECT</p>
+      <p>add_records</p>
+      <p> >>> range: 10</p>
+    </div>
+  </div>
+
+  <div id="denied">
+    <p>SAFETY SYSTEM</p>
+    <p>COMMAND REJECTED</p>
+  </div>
+
+  <div id="safe">
+    <div class="left">
+      <p class="danger">火</p>
+    </div>
+    <div class="center">
+      <div class="update">UPDATE</div>
+      <div class="sub">
+        <div class="small">
+          <p>空</p>
+        </div>
+        <div class="small">
+          <p>実装</p>
+        </div>
+      </div>
+    </div>
+    <ul class="list">
+      <li>Thread</li>
+      <li>Thread</li>
+    </ul>
+  </div>
+
+  <div id="command">
+    <div class="hex">
+      <img src="static/img/hex.svg">
+      <p>MEETS</p>
+    </div>
+    <div class="hex">
+      <img src="static/img/hex.svg">
+      <p>RECORDS</p>
+    </div>
+    <div class="hex">
+      <img src="static/img/hex.svg">
+      <p>STATS</p>
+    </div>
+    <div class="hex">
+      <img src="static/img/hex.svg">
+      <p>FOREIGN</p>
+      <a href="deleteForeign"></a>
+    </div>
+    <div class="hex">
+      <img src="static/img/hex.svg">
+      <p>GOTO TOP</p>
+      <a href="/"></a>
+    </div>
+  </div>
+
+  <div id="form">
+    <form method="get" action="./task">
+      <input name="name" type="text" placeholder="選手を検索">
+    </form>
+  </div>
+
+  <footer>
+
+  </footer>
+
+  <script>
+  {% autoescape false %}
+    function jump_page(page) {
+      var flag = false;
+      var url = "?{{group}}&{{current_event}}&page=" + page;
+      for (var i = 0; i < 19; i++){
+        if(document.gradeFilter.grade[i].checked) {
+          flag = true;
+          break;
+        };
+      };
+      if(flag) {
+        document.gradeFilter.action = url;
+        document.gradeFilter.submit();
+      } else {
+        location.href = url;
+      };
+    };
+  {% endautoescape %}
+  </script>
+</body>
+
+</html>
