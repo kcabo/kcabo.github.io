@@ -18,6 +18,7 @@ body {
   max-width: 800px;
   margin: auto;
   text-align: center;
+  overflow-x: hidden;
 }
 .slashes {
   display: flex;
@@ -295,7 +296,6 @@ header > p {
 
 #form {
   margin: 20px auto;
-  width: 400px;
 }
 #form .row {
   display: flex;
