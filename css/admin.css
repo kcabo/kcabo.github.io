@@ -77,10 +77,10 @@ header > p {
 #pane {
   margin: 30px auto;
   display: flex;
-  width: 380px;
+  width: 350px;
 }
 #pane .buttons {
-  width: 22%;
+  width: 25%;
 }
 #pane .buttons div {
   padding: 4px 5px;
@@ -258,13 +258,12 @@ header > p {
 #command {
   display: flex;
   justify-content: center;
-  margin: 0 30px;
+  margin: 0 auto;
   flex-wrap: wrap;
 }
 
 #command .hex {
-  width: 100px;
-  min-width: 100px;
+  width: 90px;
   position: relative;
   cursor: pointer;
   margin: 4px;
@@ -281,7 +280,7 @@ header > p {
   font-size: 1.5rem;
   position: absolute;
   top: 0;
-  line-height: 85px;
+  line-height: 75px;
   left: 0;
   right: 0;
   letter-spacing: -1px;
@@ -328,6 +327,7 @@ header > p {
   box-sizing: content-box;
   padding-left: 6px;
   margin-left: 10px;
+  width: 200px;
   outline: none;
   background: #fdc63033;
   color: #fdc630;
