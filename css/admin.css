@@ -19,15 +19,23 @@ body {
   margin: auto;
   text-align: center;
 }
-header {
-  margin: 20px 0;
-
+.slashes {
+  display: flex;
+  overflow: hidden;
+}
+.slash {
+  min-width: 30px;
+  height: 40px;
+  opacity: .5;
+  background: var(--red);
+  margin: 0 10px;
+  transform:skewX(-30deg);
 }
 header .caution {
   background: var(--red);
   padding: 8px;
   width: 80%;
-  margin: auto;
+  margin: 20px auto;
   animation: flash 5s ease-in-out infinite;
 }
 header .caution p {
@@ -68,14 +76,16 @@ header > p {
 
 #pane {
   margin: 30px auto;
-  border: solid .4px #fff9;
   display: flex;
-  max-width: 400px;
+  width: 380px;
+}
+#pane .buttons {
+  width: 22%;
 }
 #pane .buttons div {
   padding: 4px 5px;
   background: #50943f;
-  border: solid .1px #fff9;
+  border: solid .1px #fff4;
   color: #fff5;
   height: 50%;
 }
@@ -91,13 +101,17 @@ header > p {
   background: var(--red);
 }
 #pane .func {
+  background: #50943f66;
   padding: 6px;
   font-family: 'Roboto';
+  border: solid .1px #fff4;
+  width: 75%;
 }
 #pane .func p:first-child {
   font-size: 1.6rem;
-  background: #fffa;
-  color: black;
+  background: #fff3;
+  color: white;
+  border-radius: 4px;
   padding: 2px 10px;
   width: 100px;
 }
@@ -105,6 +119,7 @@ header > p {
   color: white;
   padding-left: 8px;
   text-align: left;
+  text-shadow: 0px 0px 4px #fff;
 }
 #pane .func p:nth-child(3) {
   font-size: 1.4rem;
@@ -118,12 +133,13 @@ header > p {
   letter-spacing: -1px;
   text-shadow: 0px 0px 8px #f6560a;
 }
+
 #denied p:first-child {
   border: solid 1px #f6560a;
   border-radius: 4px;
   width: 250px;
   margin: auto;
-  animation: flash 0.3s linear infinite;
+  animation: flash 0.1s linear infinite;
 }
 #denied p:last-child {
   font-size: 2rem;
@@ -138,14 +154,33 @@ header > p {
   }
 }
 
+#threads {
+  width: 300px;
+  overflow: auto;
+  margin: 10px auto;
+  white-space: nowrap;
+}
+#threads::-webkit-scrollbar {
+  display: none;
+}
+#threads p {
+  color: #f6560a;
+  font-family: 'Roboto';
+  letter-spacing: -1px;
+  text-shadow: 0px 0px 8px #f6560a;
+  font-size: 2rem;
+  line-height: 20px;
+}
+
+
 #safe {
   background: #cc4224;
   display: flex;
-  margin: 30px auto;
+  margin: 0 auto 30px auto;
   padding: 10px 0;
   border-radius: 3px;
   justify-content: center;
-  width: 250px;
+  width: 230px;
 }
 
 #safe .left, #safe .small {
@@ -153,7 +188,7 @@ header > p {
   border-radius: 3px;
   overflow: hidden;
 }
-#safe .left p {
+#safe .left > p {
   font-size: 4rem;
   line-height: 90px;
   width: 60px;
@@ -165,9 +200,29 @@ header > p {
   transform: scaleY(1.2);
   box-shadow: 0px 10px 10px -5px rgba(0,0,0,0.5) inset, 0px -10px 10px -5px rgba(0,0,0,0.5) inset;
 }
-#safe .left p.danger {
+#safe .left > p.danger {
   background: var(--red);
   color: #f4e1d3;
+}
+#safe .left {
+  position: relative;
+}
+#safe .left .scales {
+  position: absolute;
+  top: 0;
+  z-index: 10;
+}
+#safe .left .scales.l {
+  left: -6px;
+}
+#safe .left .scales.r {
+  right: -6px;
+}
+#safe .left .scales p {
+  width: 5px;
+  height: .8px;
+  background: black;
+  margin: 10px;
 }
 #safe .column {
   display: flex;
@@ -208,7 +263,7 @@ header > p {
 }
 
 #command .hex {
-  width: 110px;
+  width: 100px;
   min-width: 100px;
   position: relative;
   cursor: pointer;
@@ -226,7 +281,7 @@ header > p {
   font-size: 1.5rem;
   position: absolute;
   top: 0;
-  line-height: 95px;
+  line-height: 85px;
   left: 0;
   right: 0;
   letter-spacing: -1px;
@@ -282,21 +337,46 @@ header > p {
   display: block;
   width: 1px;
   height: 100%;
-  background: red;
+  background: var(--red);
   position: absolute;
   content: '';
   top: 0;
   left: 120px;
   animation: slide 4s ease-in-out infinite;
 }
+#form .row:nth-child(1) p::before {
+  animation-delay: .3s;
+  animation-duration: 5s;
+}
+#form .row:nth-child(2) p::before {
+  animation-delay: -2s;
+}
+#form .row:nth-child(3) p::before {
+  animation-delay: -.7s;
+  animation-duration: 3s;
+}
+#form .row:nth-child(4) p::before {
+  animation-delay: -1s;
+}
+
+#form p::after {
+  display: block;
+  width: .7px;
+  height: 100%;
+  background: #fdc630;
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 235px;
+}
 @keyframes slide {
   0%,100% {
-    left: 120px;
+    left: 140px;
   }
 
   50% {
-    left: 350px;
+    left: 330px;
   }
 }
 
-#safe, #pane {display: none;}
+/* #safe, #pane {display: none;} */
