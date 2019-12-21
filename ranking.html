@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="email=no,telephone=no,address=no" />
+  <link rel="icon" type="image/png" href="static/img/icon-192x192.png">
+  <link rel="apple-touch-icon" type="image/png" href="static/img/apple-touch-icon-180x180.png">
+  <title>最新ランキング - Swimmers Zero</title>
+  <meta name="description" content="日本全国の競泳レースを毎日自動解析。ランキングや選手個人の分析結果をご覧いただけます。">
+  <meta name="robots" content="nofollow">
+  <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+  <link rel="stylesheet" href="static/css/ranking.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-149393969-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-149393969-2');
+  </script>
+  <script src="https://kit.fontawesome.com/fd65322e4b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <header>
+    <div id="burger" onclick="activate(this, menu)">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <a href="/"><img src="static/img/logo_zero.svg" alt="Swimmers Zero"></a>
+    <div class="placeholder"></div>
+  </header>
+
+  <div id="menu" class="">
+    <div id="search">
+      <form method="post" action="/search">
+        <input name="name" type="text" placeholder="選手を検索">
+        <input type="submit" value="">
+        <i class="fas fa-search"></i>
+      </form>
+    </div>
+    <div class="item">
+    </div>
+  </div>
+
+  <main>
+
+    <div id="config">
+      <div class="group">
+        <p class="current deactivate" onclick="activate(this);activate(overlay)">
+          <i id="arrow" class="fas fa-angle-right"></i>男子 長水路
+        </p>
+        <div class="items">
+          <p>男子 長水路</p>
+          <p>女子 長水路</p>
+          <p>女子 長水路</p>
+        </div>
+      </div>
+
+      <div class="events">
+        <div class="row">
+          <div class="style">
+            <p>自由形</p>
+          </div>
+          <div class="distance">
+            <p>50</p>
+            <p>100</p>
+            <p>200</p>
+            <p>400</p>
+            <p>800</p>
+            <p>1500</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="style">
+            <p>背泳ぎ</p>
+          </div>
+          <div class="distance">
+            <p>50</p>
+            <p>100</p>
+            <p>200</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div id="phhh">
+
+    </div>
+
+  </main>
+
+  <div id="overlay"></div>
+
+  <footer>
+    <p><span>Reo</span> Kanzaki</p>
+    <img src="static/img/kcabo.svg" alt="kcabo">
+    <a href="https://kcabo.github.io/"></a>
+  </footer>
+
+
+
+  <script>
+
+    function activate(target) {
+      target.classList.toggle("active");
+    };
+
+    var main_elm = document.getElementsByTagName('main')[0];
+    var deactivate_elms = document.getElementsByClassName('deactivate');
+
+    main_elm.addEventListener('click', function(){
+      for (var i = 0; i < deactivate_elms.length; i++) {
+        if(deactivate_elms[i].classList.contains('active')) {
+          // deactivate_elms[i].classList.remove("active");
+        }
+      }
+    }, true)
+
+    overlay = document.getElementById('overlay');
+    overlay.addEventListener('click', function(){
+      for (var i = 0; i < deactivate_elms.length; i++) {
+        deactivate_elms[i].classList.remove("active");
+      };
+      overlay.classList.remove("active");
+    }, false)
+  </script>
+</body>
+
+</html>
