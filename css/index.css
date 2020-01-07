@@ -23,12 +23,12 @@ header #logo {
   position: absolute;
   top: 50px;
   left: calc(50% - 15px);
-  transition: transform 450ms 0s ease-out, left 250ms 450ms ease-in-out;
+  transition: transform 1.5s 0s ease, left 650ms 1.5s ease-in-out;
 }
 
 header.init #logo {
   left: calc(50% - 70px);
-  transform: rotateX(360deg);
+  transform: rotateX(1080deg);
 }
 
 header p {
@@ -40,7 +40,7 @@ header p {
   top: 46px;
   left: calc(50% - 20px);
   opacity: 0;
-  transition: opacity 1000ms 600ms ease;
+  transition: opacity 2s 1.95s ease;
 }
 
 header.init p {
