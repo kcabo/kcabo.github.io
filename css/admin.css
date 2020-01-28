@@ -1,8 +1,8 @@
 /* @import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP:100,400,700|Roboto:100,400,700&display=swap&subset=japanese'); */
 @import url('https://fonts.googleapis.com/css?family=Roboto:700&display=swap');
 @font-face {
-  font-family: 'Matisse';
-  src: url(../font/EVA-Matisse_Standard.ttf);
+  font-family: 'myf';
+  src: url(../font/myfont.ttf);
 }
 
 :root {
@@ -12,7 +12,7 @@ html {
   font-size: 62.5%;
 }
 body {
-  font-family: 'Matisse', serif;
+  font-family: 'myf', serif;
   background: #000;
   font-size: 3rem;
   max-width: 800px;
