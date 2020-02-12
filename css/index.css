@@ -18,6 +18,7 @@ main {
 header {
   height: 140px;
   position: relative;
+  overflow: hidden;
 }
 header #logo {
   width: 40px;
@@ -30,7 +31,7 @@ header #logo {
 
 header.init #logo {
   left: calc(50% - 70px);
-  transform: rotateX(1080deg);
+  transform: rotateX(720deg);
 }
 
 header p {
