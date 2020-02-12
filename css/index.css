@@ -31,7 +31,7 @@ header #logo {
 
 header.init #logo {
   left: calc(50% - 70px);
-  transform: rotateX(720deg);
+  transform: rotateX(1080deg);
 }
 
 header p {
