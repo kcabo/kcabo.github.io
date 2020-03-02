@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700|Roboto:100,400,700&display=swap&subset=japanese');
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif+JP:300&display=swap');
 :root {
   --purple: #7371FC;
 }
@@ -54,11 +55,12 @@ header.init p {
 #copy {
   text-align: center;
   font-size: 1.6rem;
-  line-height: 3;
+  line-height: 2.5;
   letter-spacing: 3px;
   font-weight: bold;
   color: #555;
   margin-bottom: 30px;
+  font-family: 'Noto Serif JP', serif;
 }
 
 #ongoing {
